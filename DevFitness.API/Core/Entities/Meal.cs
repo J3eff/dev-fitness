@@ -7,15 +7,15 @@ namespace DevFitness.API.Core.Entities
 {
     public class Meal : BaseEntity
     {
-        public Meal(string descricao, int calories, DateTime date, int userId) : base()
+        public Meal(string description, int calories, DateTime date, int userId) : base()
         {
-            Descricao = descricao;
+            Description = description;
             Calories = calories;
             Date = date;
             UserId = userId;
         }
 
-        public string Descricao { get; private set; }
+        public string Description { get; private set; }
         public int Calories { get; private set; }
         public DateTime Date { get; private set; }
 
