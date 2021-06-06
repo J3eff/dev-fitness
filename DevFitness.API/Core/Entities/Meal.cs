@@ -21,5 +21,12 @@ namespace DevFitness.API.Core.Entities
 
         // EF Core precisa indetificar de quem é a refeição 
         public int UserId { get; private set; }
+
+        public void Update(string description, int calories, DateTime date)
+        {
+            Description = description;
+            Calories = calories;
+            Date = date;
+        }
     }
 }

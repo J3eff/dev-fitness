@@ -2,9 +2,9 @@
 
 namespace DevFitness.API.Models.ViewModels
 {
-    public class MealViewModels
+    public class MealViewModel
     {
-        public MealViewModels(int id, string description, int calories, DateTime date)
+        public MealViewModel(int id, string description, int calories, DateTime date)
         {
             Id = id;
             Description = description;

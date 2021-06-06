@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DevFitness.API.Core.Entities
 {
@@ -23,5 +21,11 @@ namespace DevFitness.API.Core.Entities
         public DateTime BirthDate { get; private set; }
 
         public IEnumerable<Meal> Maels { get; private set; }
+
+        public void Update(decimal height, decimal weight)
+        {
+            Height = height;
+            Weight = weight;
+        }
     }
 }
