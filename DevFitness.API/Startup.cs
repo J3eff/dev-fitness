@@ -1,7 +1,9 @@
+using DevFitness.API.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,9 @@ namespace DevFitness.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Configuração do DbContext e SqlServer
+            var connectionString = Configuration.GetConnectionString("DevFitnessCs");
+            services.AddDbContext<DevFitnessDbContext>(options => options.UseSqlServer(connectionString));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
