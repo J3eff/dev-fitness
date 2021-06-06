@@ -31,3 +31,5 @@
 - Cadastro, Listagem, Detalhes, Atualização e Remoção de Refeição.
 - Cadastro e atualização de Usuário
 - Geração de dados para relatório de balanço energético
+
+<h4> Conteudo ministrado pelo professor <a href="https://github.com/luisdeol" target="_blank">Luis Felipe</a></h4>
