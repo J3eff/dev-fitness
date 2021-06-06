@@ -9,8 +9,8 @@
 
 <h2> 💻 Resumo </h2>
 
-Foi desenvolvida uma API REST completa de gerenciamento de refeições e informações calóricas delas, junto com os dados do usuário.  
-Além disso, na Aula 2 foi desenvolvida uma aplicação Console completa, utilizando os conceitos de fundamentos de C#, Listas e Programação Orientada a Objetos.
+- Foi desenvolvida uma API REST completa de gerenciamento de refeições e informações calóricas delas, junto com os dados do usuário.  
+- Além disso, na Aula 2 foi desenvolvida uma aplicação Console completa, utilizando os conceitos de fundamentos de C#, Listas e Programação Orientada a Objetos.
 
 <h2> ✨ Apresentação da API </h2>
 
