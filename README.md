@@ -14,7 +14,7 @@
 
 <h2> ✨ Apresentação da API </h2>
 
-![Animação](https://user-images.githubusercontent.com/50780211/120941683-5085c600-c6fa-11eb-96e5-9e7d94e4c71a.gif)
+![Animação](https://user-images.githubusercontent.com/50780211/121181933-ecb5e700-c838-11eb-96de-b436c9eb8d13.gif)
 
 <h2> ⚒️ Tecnologias e práticas utilizadas </h2>
 
