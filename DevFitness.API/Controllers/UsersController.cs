@@ -63,7 +63,7 @@ namespace DevFitness.API.Controllers
         /// </remarks>
         /// <param name="inputModel">Objeto com dados de cadastro de Usuário</param>
         /// <returns>Objeto recém-criado.</returns>
-        /// <response code="201">Objeto criado com sucesso,</response>
+        /// <response code="201">Objeto criado com sucesso.</response>
         /// <response code="400">Dados inválidos</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -80,7 +80,17 @@ namespace DevFitness.API.Controllers
         }
 
         // api/users/id HTTP PUT
+        /// <summary>
+        /// Atualiza informações de usuario 
+        /// </summary>
+        /// <param name="id">Identificador do usuario </param>
+        /// <param name="inputModel">Objeto com dados de alteração do Usuário</param>
+        /// <returns>Objeto atualizado.</returns>
+        /// <response code="204">Objeto atualizado com sucesso.</response>
+        /// <response code="400">Dados inválidos</response>
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Put(int id,[FromBody] UpdateUserInputModel inputModel)
         {
             var user = _dbContext.Users.SingleOrDefault(u => u.Id == id);
