@@ -7,5 +7,7 @@ namespace DevFitness.API.Models.InputModels
         public string description { get; set; }
         public int Calories { get; set; }
         public DateTime Date { get; set; }
+
+        public int UserId { get;  set; }
     }
 }

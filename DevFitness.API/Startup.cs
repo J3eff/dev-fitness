@@ -1,4 +1,5 @@
 using DevFitness.API.Persistence;
+using DevFitness.API.Profiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +12,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace DevFitness.API
@@ -27,6 +30,8 @@ namespace DevFitness.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(UserProfile));
+
             //Configuração do DbContext e SqlServer
             var connectionString = Configuration.GetConnectionString("DevFitnessCs");
             services.AddDbContext<DevFitnessDbContext>(options => options.UseSqlServer(connectionString));
@@ -34,7 +39,21 @@ namespace DevFitness.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevFitness.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "DevFitness.API",
+                    Version = "v1",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Jefferson Brandão",
+                        Email = "jeffersonvideo125@gmail.com",
+                        Url = new Uri("https://github.com/J3eff")
+                    }
+                }); ;
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
